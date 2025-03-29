@@ -20,14 +20,18 @@ jobs:
       run:
         working-directory: .
     steps:
-      - uses: actions/checkout@v4
-      - run: npm install
-      - run: npm run prod
-      - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: npm install
+        run: npm install
+      - name: npm run prod
+        run: npm run prod
+      - name: configure-pages
+        uses: actions/configure-pages@v4
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
         with:
           path: dist
       - run: echo "Artifact uploaded successfully"
       - uses: actions/deploy-pages@v3
         id: deployment
-      - run: echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
