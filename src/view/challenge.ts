@@ -2,7 +2,7 @@ import { h } from 'snabbdom';
 import { Renderer } from '../interfaces';
 import { url } from '../routing';
 import ChallengeCtrl from '../challenge';
-import { spinner } from './app';
+import { spinner } from './control';
 import '../../scss/_challenge.scss';
 
 export const renderChallenge: (ctrl: ChallengeCtrl) => Renderer = ctrl => _ =>

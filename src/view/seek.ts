@@ -2,7 +2,7 @@ import { h } from 'snabbdom';
 import { Renderer } from '../interfaces';
 import { url } from '../routing';
 import { SeekCtrl } from '../seek';
-import { spinner } from './app';
+import { spinner } from './control';
 import '../../scss/_seek.scss';
 
 export const renderSeek: (ctrl: SeekCtrl) => Renderer = ctrl => _ =>

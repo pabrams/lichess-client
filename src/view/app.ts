@@ -7,6 +7,7 @@ import { renderGame } from './game';
 import { renderHome } from './home';
 import { renderSeek } from './seek';
 import { renderTv } from './tv';
+import { spinner } from './control'
 
 export default function view(ctrl: Ctrl): VNode {
   return layout(ctrl, selectRenderer(ctrl)(ctrl));
@@ -26,6 +27,3 @@ const renderLoading: Renderer = _ => [loadingBody()];
 const renderNotFound: Renderer = _ => [h('h1', 'Not found')];
 
 export const loadingBody = () => h('div.loading', spinner());
-
-export const spinner = () =>
-  h('div.spinner-border.text-primary', { attrs: { role: 'status' } }, h('span.visually-hidden', 'Loading...'));
